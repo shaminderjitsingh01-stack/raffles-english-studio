@@ -81,7 +81,7 @@ export default function TikTokCarousel() {
             >
               <div className="relative rounded-sm overflow-hidden border border-cream-dark/30 hover:border-gold/30 transition-colors duration-300 bg-white shadow-sm hover:shadow-lg">
                 <iframe
-                  src={`https://www.tiktok.com/embed/${video.id}`}
+                  src={`https://www.tiktok.com/player/v1/${video.id}?description=0&music_info=0&rel=0&native_context_menu=0`}
                   className="w-[325px] h-[745px] border-0"
                   allowFullScreen
                   allow="encrypted-media"
