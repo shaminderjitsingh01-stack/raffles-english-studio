@@ -20,8 +20,7 @@ export default function Packages() {
       price: "$480",
       period: "/month",
       sessions: "8 sessions",
-      description:
-        "Our most popular package for serious exam preparation.",
+      description: "Our most popular package for serious exam preparation.",
       features: [
         "8 group sessions per month (1.5h each)",
         "Class size max 8 students",
@@ -38,8 +37,7 @@ export default function Packages() {
       price: "$120",
       period: "/session",
       sessions: "1-on-1",
-      description:
-        "Bespoke tutoring tailored to your specific needs and pace.",
+      description: "Bespoke tutoring tailored to your specific needs and pace.",
       features: [
         "1-on-1 private sessions (1.5h each)",
         "Fully customised curriculum",
@@ -54,91 +52,73 @@ export default function Packages() {
   ];
 
   return (
-    <section id="packages" className="py-24 bg-cream-light">
+    <section id="packages" className="relative py-28 bg-cream-light overflow-hidden">
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-green-primary/[0.02] rounded-full blur-[80px] -translate-y-1/2" />
+      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-gold/[0.03] rounded-full blur-[60px] -translate-y-1/2" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-gold tracking-[0.2em] uppercase text-sm mb-3">
+        <div className="reveal text-center max-w-3xl mx-auto mb-20">
+          <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
             Pricing
           </p>
-          <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             Course Packages
           </h2>
-          <p className="text-text-dark/70 text-lg leading-relaxed">
+          <div className="premium-divider mx-auto mb-6" />
+          <p className="text-text-dark/60 text-base leading-relaxed font-light">
             Flexible packages for O Level, A Level, and IELTS preparation.
             All packages include access to our curated resource library.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          {packages.map((pkg) => (
+        <div className="grid lg:grid-cols-3 gap-6 items-start">
+          {packages.map((pkg, i) => (
             <div
               key={pkg.name}
-              className={`relative rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl ${
+              className={`reveal relative rounded-sm overflow-hidden transition-all duration-500 ${
                 pkg.highlight
-                  ? "bg-green-primary text-cream shadow-lg scale-[1.02] border-2 border-gold"
-                  : "bg-white border border-cream-dark/30 shadow-sm"
+                  ? "bg-green-darker text-cream shadow-2xl shadow-green-dark/20 lg:scale-105 z-10"
+                  : "bg-white shadow-sm hover:shadow-lg border border-cream-dark/20"
               }`}
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
+              {/* Highlight accent */}
               {pkg.highlight && (
-                <div className="absolute top-0 right-0 bg-gold text-green-dark text-xs font-bold px-4 py-1.5 rounded-bl-lg tracking-wider uppercase">
-                  Most Popular
-                </div>
+                <>
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-gold-light to-gold" />
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-gold text-green-darker text-[10px] font-bold px-3 py-1.5 rounded-sm tracking-wider uppercase">
+                      Most Popular
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 noise-overlay" />
+                </>
               )}
 
-              <div className="p-8">
-                <h3
-                  className={`font-serif text-xl font-semibold mb-1 ${
-                    pkg.highlight ? "text-cream" : "text-green-dark"
-                  }`}
-                >
+              <div className="relative p-8 lg:p-10">
+                <h3 className={`font-serif text-xl font-semibold mb-1 tracking-tight ${pkg.highlight ? "text-cream" : "text-green-dark"}`}>
                   {pkg.name}
                 </h3>
-                <p
-                  className={`text-sm mb-6 ${
-                    pkg.highlight ? "text-cream/60" : "text-text-dark/50"
-                  }`}
-                >
+                <p className={`text-xs mb-8 font-light ${pkg.highlight ? "text-cream/40" : "text-text-dark/40"}`}>
                   {pkg.sessions} &middot; {pkg.description}
                 </p>
 
-                <div className="flex items-baseline gap-1 mb-8">
-                  <span
-                    className={`font-serif text-4xl font-bold ${
-                      pkg.highlight ? "text-gold" : "text-green-primary"
-                    }`}
-                  >
+                <div className="flex items-baseline gap-1 mb-10">
+                  <span className={`font-serif text-5xl font-bold tracking-tight ${pkg.highlight ? "text-gold" : "text-green-primary"}`}>
                     {pkg.price}
                   </span>
-                  <span
-                    className={`text-sm ${
-                      pkg.highlight ? "text-cream/50" : "text-text-dark/40"
-                    }`}
-                  >
+                  <span className={`text-sm font-light ${pkg.highlight ? "text-cream/40" : "text-text-dark/40"}`}>
                     {pkg.period}
                   </span>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-4 mb-10">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm">
-                      <svg
-                        className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
-                          pkg.highlight ? "text-gold" : "text-green-primary"
-                        }`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
+                      <svg className={`w-4 h-4 mt-0.5 flex-shrink-0 ${pkg.highlight ? "text-gold" : "text-green-primary"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span
-                        className={
-                          pkg.highlight ? "text-cream/80" : "text-text-dark/70"
-                        }
-                      >
+                      <span className={`font-light ${pkg.highlight ? "text-cream/70" : "text-text-dark/60"}`}>
                         {feature}
                       </span>
                     </li>
@@ -149,9 +129,9 @@ export default function Packages() {
                   href="https://wa.me/6589677685"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block text-center font-semibold py-3.5 rounded transition-all duration-200 ${
+                  className={`block text-center font-medium py-4 rounded-sm transition-all duration-300 text-sm tracking-wide ${
                     pkg.highlight
-                      ? "bg-gold hover:bg-gold-light text-green-dark"
+                      ? "bg-gold hover:bg-gold-light text-green-darker hover:shadow-[0_0_30px_rgba(196,169,98,0.2)]"
                       : "bg-green-primary hover:bg-green-light text-cream"
                   }`}
                 >
@@ -162,7 +142,7 @@ export default function Packages() {
           ))}
         </div>
 
-        <p className="text-center text-text-dark/50 text-sm mt-10">
+        <p className="reveal text-center text-text-dark/40 text-xs mt-12 font-light">
           All prices in SGD. Trial lesson available at $50 (waived upon
           sign-up). Contact us for sibling & group discounts.
         </p>

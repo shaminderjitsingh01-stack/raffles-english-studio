@@ -28,7 +28,6 @@ function formatDate(dateString: string) {
   });
 }
 
-// Placeholder posts shown when Sanity is not connected
 const placeholderPosts: Post[] = [
   {
     _id: "1",
@@ -59,127 +58,109 @@ const placeholderPosts: Post[] = [
   },
 ];
 
+// Unsplash placeholder images for blog posts
+const blogImages = [
+  "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop&q=80",
+];
+
 export default async function Blog() {
   const posts = await getPosts();
   const displayPosts = posts.length > 0 ? posts : placeholderPosts;
 
   return (
-    <section id="blog" className="py-24 bg-cream-light">
+    <section id="blog" className="relative py-28 bg-cream-light overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gold/[0.02] rounded-full blur-[80px]" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-gold tracking-[0.2em] uppercase text-sm mb-3">
+        <div className="reveal text-center max-w-3xl mx-auto mb-20">
+          <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
             Our Blog
           </p>
-          <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             English Insights & Tips
           </h2>
-          <p className="text-text-dark/70 text-lg leading-relaxed">
+          <div className="premium-divider mx-auto mb-6" />
+          <p className="text-text-dark/60 text-base leading-relaxed font-light">
             Expert advice, exam strategies, and language insights from our team
             of educators.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayPosts.map((post) => (
+          {displayPosts.map((post, i) => (
             <article
               key={post._id}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-cream-dark/20 group"
+              className="reveal group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-cream-dark/15 hover:border-gold/20"
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
-              {/* Image */}
-              <div className="relative h-48 bg-green-primary/10 overflow-hidden">
+              {/* Featured image */}
+              <div className="relative h-52 overflow-hidden">
                 {post.mainImage ? (
                   <img
                     src={urlFor(post.mainImage).width(600).height(400).url()}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-green-primary to-green-dark flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-cream/30"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                      />
-                    </svg>
-                  </div>
+                  <img
+                    src={blogImages[i % blogImages.length]}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 )}
-              </div>
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-green-darker/60 via-transparent to-transparent" />
 
-              {/* Content */}
-              <div className="p-6">
-                {/* Categories */}
+                {/* Categories on image */}
                 {post.categories && post.categories.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-3">
+                  <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
                     {post.categories.map((cat) => (
                       <span
                         key={cat}
-                        className="text-[10px] font-semibold tracking-wider uppercase bg-green-primary/10 text-green-primary px-2.5 py-1 rounded-full"
+                        className="text-[9px] font-semibold tracking-wider uppercase bg-gold/90 text-green-darker px-2.5 py-1 rounded-sm"
                       >
                         {cat}
                       </span>
                     ))}
                   </div>
                 )}
+              </div>
 
-                <h3 className="font-serif text-green-dark text-lg font-semibold mb-2 group-hover:text-green-primary transition-colors line-clamp-2">
+              {/* Content */}
+              <div className="p-7">
+                <time className="text-text-dark/30 text-[11px] tracking-wider uppercase font-light">
+                  {formatDate(post.publishedAt)}
+                </time>
+
+                <h3 className="font-serif text-green-dark text-lg font-semibold mt-2 mb-3 group-hover:text-green-primary transition-colors line-clamp-2 tracking-tight">
                   {post.title}
                 </h3>
 
-                <p className="text-text-dark/60 text-sm leading-relaxed mb-4 line-clamp-3">
+                <p className="text-text-dark/50 text-sm leading-relaxed mb-5 line-clamp-3 font-light">
                   {post.excerpt}
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <time className="text-text-dark/40 text-xs">
-                    {formatDate(post.publishedAt)}
-                  </time>
-                  <span className="text-green-primary text-sm font-medium group-hover:text-gold transition-colors flex items-center gap-1">
-                    Read more
-                    <svg
-                      className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </span>
-                </div>
+                <span className="inline-flex items-center gap-1.5 text-green-primary text-xs font-medium group-hover:text-gold transition-colors tracking-wide">
+                  Read article
+                  <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="reveal text-center mt-14">
           <a
             href="/blog"
-            className="inline-flex items-center gap-2 bg-green-primary hover:bg-green-light text-cream font-semibold px-8 py-3.5 rounded transition-all duration-200"
+            className="inline-flex items-center gap-2 bg-green-primary hover:bg-green-light text-cream font-medium px-8 py-3.5 rounded-sm transition-all duration-300 text-sm tracking-wide hover:shadow-lg hover:shadow-green-primary/20"
           >
             View All Articles
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
         </div>

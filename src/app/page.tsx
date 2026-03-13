@@ -9,10 +9,12 @@ import Blog from "@/components/Blog";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
     <>
+      <ScrollReveal />
       <Navbar />
       <Hero />
       <About />

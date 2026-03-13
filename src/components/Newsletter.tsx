@@ -15,70 +15,68 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-24 bg-green-primary relative overflow-hidden">
-      {/* Decorative circles */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-green-light/10 rounded-full translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-dark/20 rounded-full -translate-x-1/2 translate-y-1/2" />
+    <section className="relative py-28 bg-green-primary overflow-hidden noise-overlay">
+      {/* Ambient glow */}
+      <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-gold/8 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-green-light/10 rounded-full blur-[80px]" />
 
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-gold tracking-[0.2em] uppercase text-sm mb-3">
-          Stay Updated
-        </p>
-        <h2 className="font-serif text-cream text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-          Join Our Newsletter
-        </h2>
-        <p className="text-cream/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          Get weekly English tips, exam strategies, and exclusive study
-          resources delivered straight to your inbox.
-        </p>
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-24 h-24 border-l border-t border-gold/10 m-8" />
+      <div className="absolute bottom-0 right-0 w-24 h-24 border-r border-b border-gold/10 m-8" />
 
-        {submitted ? (
-          <div className="bg-cream/10 backdrop-blur-sm border border-gold/30 rounded-xl p-8">
-            <svg
-              className="w-12 h-12 text-gold mx-auto mb-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
+      <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="reveal">
+          <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
+            Stay Updated
+          </p>
+          <h2 className="font-serif text-cream text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            Join Our Newsletter
+          </h2>
+          <div className="premium-divider mx-auto mb-6" />
+          <p className="text-cream/40 text-base leading-relaxed mb-12 font-light">
+            Get weekly English tips, exam strategies, and exclusive study
+            resources delivered straight to your inbox.
+          </p>
+        </div>
+
+        <div className="reveal">
+          {submitted ? (
+            <div className="glass-card-dark rounded-sm p-10">
+              <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
+                <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p className="text-cream font-serif text-xl font-semibold tracking-tight">
+                Welcome aboard!
+              </p>
+              <p className="text-cream/40 text-sm mt-2 font-light">
+                Check your inbox for a confirmation email.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                className="flex-1 px-5 py-4 rounded-sm bg-cream/[0.06] border border-cream/10 text-cream placeholder-cream/30 focus:outline-none focus:border-gold/30 focus:ring-1 focus:ring-gold/20 transition-all text-sm font-light"
               />
-            </svg>
-            <p className="text-cream font-serif text-xl font-semibold">
-              Welcome aboard!
-            </p>
-            <p className="text-cream/60 text-sm mt-2">
-              Check your inbox for a confirmation email.
-            </p>
-          </div>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto"
-          >
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email address"
-              className="flex-1 px-5 py-4 rounded-lg bg-cream/10 border border-cream/20 text-cream placeholder-cream/40 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/30 transition-all"
-            />
-            <button
-              type="submit"
-              className="bg-gold hover:bg-gold-light text-green-dark font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-gold/20 whitespace-nowrap"
-            >
-              Subscribe
-            </button>
-          </form>
-        )}
+              <button
+                type="submit"
+                className="bg-gold hover:bg-gold-light text-green-darker font-medium px-8 py-4 rounded-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(196,169,98,0.2)] text-sm tracking-wide whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+          )}
 
-        <p className="text-cream/30 text-xs mt-6">
-          No spam, ever. Unsubscribe anytime.
-        </p>
+          <p className="text-cream/20 text-[11px] mt-6 font-light tracking-wide">
+            No spam, ever. Unsubscribe anytime.
+          </p>
+        </div>
       </div>
     </section>
   );
