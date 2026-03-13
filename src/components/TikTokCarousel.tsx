@@ -3,14 +3,14 @@
 import { useRef } from "react";
 
 const TIKTOK_VIDEOS = [
-  { id: "7490245891584986399", title: "Grammar, Vocabulary & Writing Tips" },
-  { id: "7557768967222201630", title: "7th Grade English Highlights" },
-  { id: "7474191445994245406", title: "Fun Grammar Tips & Lessons" },
-  { id: "7455159381743766814", title: "Common Grammar Mistakes" },
-  { id: "7449375358815718687", title: "Proofing Grammar Errors" },
-  { id: "7413552335592459562", title: "Vocabulary Lesson" },
-  { id: "7424503078625234219", title: "Classroom Fun with Grammar" },
-  { id: "7072540170154937646", title: "Middle School Vocabulary" },
+  { id: "7499520042980347138", title: "Learn Different Actions in English" },
+  { id: "7509159229224275222", title: "How to Ask If Something is Free" },
+  { id: "7488768737819102486", title: "Essential English Vocabulary" },
+  { id: "7520249897388461334", title: "This, That, These or Those" },
+  { id: "7496586729432878358", title: "Diet & Food Vocabulary" },
+  { id: "7459026690954546454", title: "Think in English, Not Your Language" },
+  { id: "7345484839761530145", title: "Everyday English Learning" },
+  { id: "7239630775304408347", title: "Funny English Story" },
 ];
 
 export default function TikTokCarousel() {
@@ -99,7 +99,7 @@ export default function TikTokCarousel() {
 
         <div className="reveal text-center mt-12">
           <a
-            href="https://www.tiktok.com/@iamthatenglishteacher"
+            href="https://www.tiktok.com/@englishteacherclaire"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 text-green-primary/60 hover:text-gold border border-green-primary/15 hover:border-gold/30 px-6 py-3 rounded-sm transition-all duration-300 text-sm font-light tracking-wide"

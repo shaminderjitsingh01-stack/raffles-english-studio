@@ -111,7 +111,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <Navbar />
+      <Navbar forceSolid />
       <main className="pt-24 pb-16 bg-cream-light min-h-screen">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero image */}
