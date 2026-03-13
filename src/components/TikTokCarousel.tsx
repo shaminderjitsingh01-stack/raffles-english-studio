@@ -77,16 +77,17 @@ export default function TikTokCarousel() {
           {TIKTOK_VIDEOS.map((video) => (
             <div
               key={video.id}
-              className="flex-shrink-0 w-[300px] snap-start"
+              className="flex-shrink-0 w-[325px] snap-start"
             >
               <div className="relative rounded-sm overflow-hidden border border-cream-dark/30 hover:border-gold/30 transition-colors duration-300 bg-white shadow-sm hover:shadow-lg">
                 <iframe
-                  src={`https://www.tiktok.com/embed/v2/${video.id}?lang=en`}
-                  className="w-full"
-                  style={{ height: "500px" }}
+                  src={`https://www.tiktok.com/embed/${video.id}`}
+                  className="w-[325px] h-[745px] border-0"
                   allowFullScreen
                   allow="encrypted-media"
                   title={video.title}
+                  scrolling="no"
+                  style={{ overflow: "hidden" }}
                 />
               </div>
               <p className="text-text-dark/50 text-xs mt-3 font-light tracking-wide">

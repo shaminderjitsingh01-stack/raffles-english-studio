@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-green-darker text-cream relative noise-overlay">
+    <footer id="contact" className="bg-cream-light text-text-dark relative">
       {/* Top decorative border */}
-      <div className="h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer */}
@@ -19,18 +19,18 @@ export default function Footer() {
                 height={56}
               />
               <div>
-                <p className="text-cream/40 text-[9px] tracking-[0.3em] uppercase font-light leading-none">
+                <p className="text-green-primary/40 text-[9px] tracking-[0.3em] uppercase font-light leading-none">
                   The
                 </p>
-                <p className="text-cream font-serif text-xl font-bold leading-tight tracking-tight">
+                <p className="text-green-primary font-serif text-xl font-bold leading-tight tracking-tight">
                   Raffles
                 </p>
-                <p className="text-cream/50 text-[9px] tracking-[0.18em] uppercase font-light leading-none mt-0.5">
+                <p className="text-green-primary/50 text-[9px] tracking-[0.18em] uppercase font-light leading-none mt-0.5">
                   English Studio
                 </p>
               </div>
             </div>
-            <p className="text-cream/30 text-sm leading-relaxed font-light">
+            <p className="text-text-dark/40 text-sm leading-relaxed font-light">
               Singapore&apos;s premier English tuition studio. Expert coaching for
               O Levels, A Levels, and IELTS examinations.
             </p>
@@ -64,7 +64,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-sm bg-cream/[0.05] hover:bg-gold hover:text-green-darker text-cream/30 flex items-center justify-center transition-all duration-300"
+                  className="w-10 h-10 rounded-sm bg-green-primary/5 hover:bg-gold text-green-primary/40 hover:text-white flex items-center justify-center transition-all duration-300"
                   aria-label={social.label}
                 >
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-cream font-semibold mb-5 text-sm tracking-tight">
+            <h4 className="font-serif text-green-primary font-semibold mb-5 text-sm tracking-tight">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -91,7 +91,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-cream/30 hover:text-gold text-sm transition-colors duration-200 font-light"
+                    className="text-text-dark/40 hover:text-gold text-sm transition-colors duration-200 font-light"
                   >
                     {link.label}
                   </a>
@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Courses */}
           <div>
-            <h4 className="font-serif text-cream font-semibold mb-5 text-sm tracking-tight">
+            <h4 className="font-serif text-green-primary font-semibold mb-5 text-sm tracking-tight">
               Our Courses
             </h4>
             <ul className="space-y-3">
@@ -114,7 +114,7 @@ export default function Footer() {
                 "Private Tutoring",
               ].map((course) => (
                 <li key={course}>
-                  <span className="text-cream/30 text-sm font-light">{course}</span>
+                  <span className="text-text-dark/40 text-sm font-light">{course}</span>
                 </li>
               ))}
             </ul>
@@ -122,7 +122,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif text-cream font-semibold mb-5 text-sm tracking-tight">
+            <h4 className="font-serif text-green-primary font-semibold mb-5 text-sm tracking-tight">
               Contact Us
             </h4>
             <ul className="space-y-5">
@@ -137,11 +137,11 @@ export default function Footer() {
                     href="https://wa.me/6589677685"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cream/50 hover:text-gold text-sm transition-colors font-light"
+                    className="text-text-dark/60 hover:text-gold text-sm transition-colors font-light"
                   >
                     +65 8967 7685
                   </a>
-                  <p className="text-cream/20 text-xs font-light">WhatsApp available</p>
+                  <p className="text-text-dark/30 text-xs font-light">WhatsApp available</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -152,7 +152,7 @@ export default function Footer() {
                 </div>
                 <a
                   href="mailto:hello@rafflesenglishstudio.com"
-                  className="text-cream/50 hover:text-gold text-sm transition-colors font-light"
+                  className="text-text-dark/60 hover:text-gold text-sm transition-colors font-light"
                 >
                   hello@rafflesenglishstudio.com
                 </a>
@@ -164,7 +164,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span className="text-cream/50 text-sm font-light">
+                <span className="text-text-dark/60 text-sm font-light">
                   Singapore
                 </span>
               </li>
@@ -173,16 +173,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-cream/[0.06] py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-cream/20 text-xs font-light">
+        <div className="border-t border-cream-dark/20 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-text-dark/25 text-xs font-light">
             &copy; {new Date().getFullYear()} The Raffles English Studio. All
             rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-cream/20 hover:text-cream/40 text-xs transition-colors font-light">
+            <a href="#" className="text-text-dark/25 hover:text-gold text-xs transition-colors font-light">
               Privacy Policy
             </a>
-            <a href="#" className="text-cream/20 hover:text-cream/40 text-xs transition-colors font-light">
+            <a href="#" className="text-text-dark/25 hover:text-gold text-xs transition-colors font-light">
               Terms of Service
             </a>
           </div>
