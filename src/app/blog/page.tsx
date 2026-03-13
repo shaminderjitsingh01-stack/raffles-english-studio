@@ -112,9 +112,10 @@ export default async function BlogPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayPosts.map((post) => (
-              <article
+              <a
+                href={`/blog/${post.slug.current}`}
                 key={post._id}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-cream-dark/20 group"
+                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-cream-dark/20 group block"
               >
                 <div className="relative h-48 bg-green-primary/10 overflow-hidden">
                   {post.mainImage ? (
@@ -168,7 +169,7 @@ export default async function BlogPage() {
                     {formatDate(post.publishedAt)}
                   </time>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </div>

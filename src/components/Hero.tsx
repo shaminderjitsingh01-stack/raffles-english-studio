@@ -14,8 +14,8 @@ export default function Hero() {
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark green overlay */}
-      <div className="absolute inset-0 bg-green-darker/85" />
+      {/* Dark green overlay — lighter tint to show video */}
+      <div className="absolute inset-0 bg-green-darker/70" />
 
       {/* Ambient background effects */}
       <div className="absolute inset-0">

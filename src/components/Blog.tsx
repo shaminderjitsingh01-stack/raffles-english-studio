@@ -90,9 +90,10 @@ export default async function Blog() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayPosts.map((post, i) => (
-            <article
+            <a
+              href={`/blog/${post.slug.current}`}
               key={post._id}
-              className="reveal group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-cream-dark/15 hover:border-gold/20"
+              className="reveal group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-cream-dark/15 hover:border-gold/20 block"
               style={{ transitionDelay: `${i * 150}ms` }}
             >
               {/* Featured image */}
@@ -149,7 +150,7 @@ export default async function Blog() {
                   </svg>
                 </span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
 
