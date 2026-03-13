@@ -27,13 +27,12 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-sm py-3"
+          ? "bg-green-dark/95 backdrop-blur-xl shadow-lg shadow-green-darker/20 py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo + brand name side by side */}
           <a href="#" className="flex items-center gap-3 group">
             <Image
               src="/logo.png"
@@ -43,25 +42,24 @@ export default function Navbar() {
               className={`transition-all duration-300 ${scrolled ? "w-10 h-10" : "w-[52px] h-[52px]"}`}
             />
             <div className="hidden sm:block">
-              <p className="text-green-primary/40 text-[9px] tracking-[0.3em] uppercase font-light leading-none">
+              <p className="text-cream/40 text-[9px] tracking-[0.3em] uppercase font-light leading-none">
                 The
               </p>
-              <p className="text-green-primary font-serif text-xl font-bold leading-tight tracking-tight group-hover:text-gold transition-colors duration-300">
+              <p className="text-cream font-serif text-xl font-bold leading-tight tracking-tight group-hover:text-gold transition-colors duration-300">
                 Raffles
               </p>
-              <p className="text-green-primary/50 text-[9px] tracking-[0.18em] uppercase font-light leading-none mt-0.5">
+              <p className="text-cream/50 text-[9px] tracking-[0.18em] uppercase font-light leading-none mt-0.5">
                 English Studio
               </p>
             </div>
           </a>
 
-          {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-7">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-text-dark/50 hover:text-gold text-[13px] tracking-wide transition-colors duration-200 font-light"
+                className="text-cream/50 hover:text-gold text-[13px] tracking-wide transition-colors duration-200 font-light"
               >
                 {link.label}
               </a>
@@ -70,16 +68,15 @@ export default function Navbar() {
               href="https://wa.me/6589677685"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gold hover:bg-gold-light text-white font-medium text-[13px] px-5 py-2.5 rounded-sm transition-all duration-300 tracking-wide hover:shadow-[0_0_20px_rgba(196,169,98,0.2)]"
+              className="bg-gold hover:bg-gold-light text-green-darker font-medium text-[13px] px-5 py-2.5 rounded-sm transition-all duration-300 tracking-wide hover:shadow-[0_0_20px_rgba(196,169,98,0.2)]"
             >
               Book a Trial
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-green-primary/60 hover:text-green-primary p-2 transition-colors"
+            className="lg:hidden text-cream/60 hover:text-cream p-2 transition-colors"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,16 +89,15 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu */}
         {mobileOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-cream-dark/20 bg-white/95 backdrop-blur-xl rounded-b-sm -mx-4 px-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-cream/10">
             <div className="flex flex-col gap-3 pt-4">
               {links.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-text-dark/60 hover:text-gold text-sm tracking-wide transition-colors font-light"
+                  className="text-cream/60 hover:text-gold text-sm tracking-wide transition-colors font-light"
                 >
                   {link.label}
                 </a>
@@ -110,7 +106,7 @@ export default function Navbar() {
                 href="https://wa.me/6589677685"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gold hover:bg-gold-light text-white font-medium text-sm px-5 py-2.5 rounded-sm text-center mt-2 transition-all tracking-wide"
+                className="bg-gold hover:bg-gold-light text-green-darker font-medium text-sm px-5 py-2.5 rounded-sm text-center mt-2 transition-all tracking-wide"
               >
                 Book a Trial
               </a>
