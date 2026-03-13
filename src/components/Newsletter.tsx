@@ -15,7 +15,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="relative py-28 bg-green-primary overflow-hidden noise-overlay">
+    <section className="relative py-28 bg-green-primary overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-gold/8 rounded-full blur-[100px]" />
       <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-green-light/10 rounded-full blur-[80px]" />
@@ -33,7 +33,7 @@ export default function Newsletter() {
             Join Our Newsletter
           </h2>
           <div className="premium-divider mx-auto mb-6" />
-          <p className="text-cream/40 text-base leading-relaxed mb-12 font-light">
+          <p className="text-cream/50 text-base leading-relaxed mb-12 font-light">
             Get weekly English tips, exam strategies, and exclusive study
             resources delivered straight to your inbox.
           </p>
@@ -41,7 +41,7 @@ export default function Newsletter() {
 
         <div className="reveal">
           {submitted ? (
-            <div className="glass-card-dark rounded-sm p-10">
+            <div className="bg-cream/10 backdrop-blur-sm border border-gold/20 rounded-sm p-10">
               <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
                 <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
@@ -62,7 +62,7 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="flex-1 px-5 py-4 rounded-sm bg-cream/[0.06] border border-cream/10 text-cream placeholder-cream/30 focus:outline-none focus:border-gold/30 focus:ring-1 focus:ring-gold/20 transition-all text-sm font-light"
+                className="flex-1 px-5 py-4 rounded-sm bg-cream/[0.08] border border-cream/15 text-cream placeholder-cream/30 focus:outline-none focus:border-gold/30 focus:ring-1 focus:ring-gold/20 transition-all text-sm font-light"
               />
               <button
                 type="submit"

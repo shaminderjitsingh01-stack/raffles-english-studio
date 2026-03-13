@@ -2,17 +2,30 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-green-darker overflow-hidden">
-      {/* Ambient background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-green-darker/80" />
+
+      {/* Ambient background effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-green-primary/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-green-light/5 rounded-full blur-[80px]" />
+        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-green-primary/15 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-gold/8 rounded-full blur-[100px]" />
 
         {/* Decorative rings */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-cream/[0.03] rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] border border-cream/[0.05] rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-gold/[0.05] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] border border-cream/[0.04] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-gold/[0.04] rounded-full" />
 
         {/* Corner accents */}
         <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-gold/10 m-8" />
@@ -89,7 +102,7 @@ export default function Hero() {
 
         {/* Stats bar */}
         <div className="animate-fade-in-up opacity-0 delay-500 mt-20 flex items-center justify-center">
-          <div className="glass-card-dark rounded-sm px-2 py-4 sm:px-8 inline-flex items-center divide-x divide-cream/10">
+          <div className="bg-cream/[0.06] backdrop-blur-xl border border-cream/10 rounded-sm px-2 py-4 sm:px-8 inline-flex items-center divide-x divide-cream/10">
             {[
               { value: "500+", label: "Students Coached" },
               { value: "95%", label: "Distinction Rate" },

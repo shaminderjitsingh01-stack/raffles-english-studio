@@ -26,9 +26,9 @@ export default function TikTokCarousel() {
   };
 
   return (
-    <section id="videos" className="relative py-28 bg-green-darker overflow-hidden noise-overlay">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-primary/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[100px]" />
+    <section id="videos" className="relative py-28 bg-cream overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-primary/[0.02] rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-[100px]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
@@ -36,11 +36,11 @@ export default function TikTokCarousel() {
             <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
               Learn on TikTok
             </p>
-            <h2 className="font-serif text-cream text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+            <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
               English Tips & Lessons
             </h2>
             <div className="premium-divider mt-4 mb-4" />
-            <p className="text-cream/40 max-w-xl font-light text-sm">
+            <p className="text-text-dark/50 max-w-xl font-light text-sm">
               Quick English tips, exam hacks, and study motivation — bite-sized
               lessons you can watch anywhere.
             </p>
@@ -49,7 +49,7 @@ export default function TikTokCarousel() {
           <div className="reveal flex gap-3">
             <button
               onClick={() => scroll("left")}
-              className="w-12 h-12 rounded-sm border border-cream/10 text-cream/50 hover:bg-cream/5 hover:text-cream hover:border-cream/20 transition-all flex items-center justify-center"
+              className="w-12 h-12 rounded-sm border border-green-primary/20 text-green-primary/50 hover:bg-green-primary/5 hover:text-green-primary hover:border-green-primary/30 transition-all flex items-center justify-center"
               aria-label="Scroll left"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@ export default function TikTokCarousel() {
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-12 h-12 rounded-sm border border-cream/10 text-cream/50 hover:bg-cream/5 hover:text-cream hover:border-cream/20 transition-all flex items-center justify-center"
+              className="w-12 h-12 rounded-sm border border-green-primary/20 text-green-primary/50 hover:bg-green-primary/5 hover:text-green-primary hover:border-green-primary/30 transition-all flex items-center justify-center"
               aria-label="Scroll right"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ export default function TikTokCarousel() {
               key={video.id}
               className="flex-shrink-0 w-[300px] snap-start"
             >
-              <div className="relative rounded-sm overflow-hidden border border-cream/[0.06] hover:border-gold/20 transition-colors duration-300 bg-cream/[0.02]">
+              <div className="relative rounded-sm overflow-hidden border border-cream-dark/30 hover:border-gold/30 transition-colors duration-300 bg-white shadow-sm hover:shadow-lg">
                 <iframe
                   src={`https://www.tiktok.com/embed/v2/${video.id}?lang=en`}
                   className="w-full"
@@ -89,7 +89,7 @@ export default function TikTokCarousel() {
                   title={video.title}
                 />
               </div>
-              <p className="text-cream/50 text-xs mt-3 font-light tracking-wide">
+              <p className="text-text-dark/50 text-xs mt-3 font-light tracking-wide">
                 {video.title}
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function TikTokCarousel() {
             href="https://www.tiktok.com/@englishteacherclaire"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-cream/50 hover:text-gold border border-cream/10 hover:border-gold/30 px-6 py-3 rounded-sm transition-all duration-300 text-sm font-light tracking-wide"
+            className="inline-flex items-center gap-3 text-green-primary/60 hover:text-gold border border-green-primary/15 hover:border-gold/30 px-6 py-3 rounded-sm transition-all duration-300 text-sm font-light tracking-wide"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.74a8.18 8.18 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.17z" />
