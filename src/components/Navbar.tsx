@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export default function Navbar() {
+export default function Navbar({ forceSolid = false }: { forceSolid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -12,6 +12,8 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const solid = forceSolid || scrolled;
 
   const links = [
     { href: "#about", label: "About" },
@@ -26,20 +28,20 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        solid
           ? "bg-green-dark/95 backdrop-blur-xl shadow-lg shadow-green-darker/20 py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <Image
               src="/logo.png"
               alt="The Raffles English Studio"
               width={52}
               height={52}
-              className={`transition-all duration-300 ${scrolled ? "w-10 h-10" : "w-[52px] h-[52px]"}`}
+              className={`transition-all duration-300 ${solid ? "w-10 h-10" : "w-[52px] h-[52px]"}`}
             />
             <div className="hidden sm:block">
               <p className="text-cream/40 text-[9px] tracking-[0.3em] uppercase font-light leading-none">
