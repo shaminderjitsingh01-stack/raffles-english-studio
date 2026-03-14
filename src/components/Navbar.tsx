@@ -61,7 +61,7 @@ export default function Navbar({ forceSolid = false }: { forceSolid?: boolean })
               <a
                 key={link.href}
                 href={link.href}
-                className="text-cream/50 hover:text-gold text-[13px] tracking-wide transition-colors duration-200 font-light"
+                className="text-cream/50 hover:text-gold text-sm tracking-wide transition-colors duration-200 font-light"
               >
                 {link.label}
               </a>

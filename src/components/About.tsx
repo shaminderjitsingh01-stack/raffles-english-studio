@@ -51,14 +51,14 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="reveal text-center max-w-3xl mx-auto mb-20">
-          <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
+          <p className="text-gold tracking-[0.3em] uppercase text-sm font-medium mb-4">
             Why Choose Us
           </p>
           <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             The Raffles Difference
           </h2>
           <div className="premium-divider mx-auto mb-6" />
-          <p className="text-text-dark/60 text-base leading-relaxed font-light">
+          <p className="text-text-dark/60 text-lg leading-relaxed font-light">
             Founded on the belief that every student deserves access to
             exceptional English education, The Raffles English Studio combines
             time-honoured teaching methods with modern pedagogical insights.
@@ -85,10 +85,10 @@ export default function About() {
                 <div className="w-12 h-12 rounded-sm bg-green-primary/5 group-hover:bg-gold/10 flex items-center justify-center text-green-primary group-hover:text-gold transition-all duration-500 mb-5">
                   {f.icon}
                 </div>
-                <h3 className="font-serif text-green-dark text-lg font-semibold mb-3 tracking-tight">
+                <h3 className="font-serif text-green-dark text-xl font-semibold mb-3 tracking-tight">
                   {f.title}
                 </h3>
-                <p className="text-text-dark/50 text-sm leading-relaxed font-light">
+                <p className="text-text-dark/50 text-base leading-relaxed font-light">
                   {f.desc}
                 </p>
               </div>

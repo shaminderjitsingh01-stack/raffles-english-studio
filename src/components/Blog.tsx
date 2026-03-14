@@ -75,14 +75,14 @@ export default async function Blog() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal text-center max-w-3xl mx-auto mb-20">
-          <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
+          <p className="text-gold tracking-[0.3em] uppercase text-sm font-medium mb-4">
             Our Blog
           </p>
           <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             English Insights & Tips
           </h2>
           <div className="premium-divider mx-auto mb-6" />
-          <p className="text-text-dark/60 text-base leading-relaxed font-light">
+          <p className="text-text-dark/60 text-lg leading-relaxed font-light">
             Expert advice, exam strategies, and language insights from our team
             of educators.
           </p>
@@ -120,7 +120,7 @@ export default async function Blog() {
                     {post.categories.map((cat) => (
                       <span
                         key={cat}
-                        className="text-[9px] font-semibold tracking-wider uppercase bg-gold/90 text-green-darker px-2.5 py-1 rounded-sm"
+                        className="text-[10px] font-semibold tracking-wider uppercase bg-gold/90 text-green-darker px-2.5 py-1 rounded-sm"
                       >
                         {cat}
                       </span>
@@ -131,19 +131,19 @@ export default async function Blog() {
 
               {/* Content */}
               <div className="p-7">
-                <time className="text-text-dark/30 text-[11px] tracking-wider uppercase font-light">
+                <time className="text-text-dark/30 text-xs tracking-wider uppercase font-light">
                   {formatDate(post.publishedAt)}
                 </time>
 
-                <h3 className="font-serif text-green-dark text-lg font-semibold mt-2 mb-3 group-hover:text-green-primary transition-colors line-clamp-2 tracking-tight">
+                <h3 className="font-serif text-green-dark text-xl font-semibold mt-2 mb-3 group-hover:text-green-primary transition-colors line-clamp-2 tracking-tight">
                   {post.title}
                 </h3>
 
-                <p className="text-text-dark/50 text-sm leading-relaxed mb-5 line-clamp-3 font-light">
+                <p className="text-text-dark/50 text-base leading-relaxed mb-5 line-clamp-3 font-light">
                   {post.excerpt}
                 </p>
 
-                <span className="inline-flex items-center gap-1.5 text-green-primary text-xs font-medium group-hover:text-gold transition-colors tracking-wide">
+                <span className="inline-flex items-center gap-1.5 text-green-primary text-sm font-medium group-hover:text-gold transition-colors tracking-wide">
                   Read article
                   <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -157,7 +157,7 @@ export default async function Blog() {
         <div className="reveal text-center mt-14">
           <a
             href="/blog"
-            className="inline-flex items-center gap-2 bg-green-primary hover:bg-green-light text-cream font-medium px-8 py-3.5 rounded-sm transition-all duration-300 text-sm tracking-wide hover:shadow-lg hover:shadow-green-primary/20"
+            className="inline-flex items-center gap-2 bg-green-primary hover:bg-green-light text-cream font-medium px-8 py-3.5 rounded-sm transition-all duration-300 text-base tracking-wide hover:shadow-lg hover:shadow-green-primary/20"
           >
             View All Articles
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

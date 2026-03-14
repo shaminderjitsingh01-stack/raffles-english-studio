@@ -44,14 +44,14 @@ export default function Testimonials() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal text-center max-w-3xl mx-auto mb-20">
-          <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
+          <p className="text-gold tracking-[0.3em] uppercase text-sm font-medium mb-4">
             Testimonials
           </p>
           <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             What Our Students Say
           </h2>
           <div className="premium-divider mx-auto mb-6" />
-          <p className="text-text-dark/60 text-base leading-relaxed font-light">
+          <p className="text-text-dark/60 text-lg leading-relaxed font-light">
             Real results from real students. Here&apos;s what our community has
             to say about their experience.
           </p>
@@ -73,18 +73,18 @@ export default function Testimonials() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391C0 7.905 3.748 4.039 9 3l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z" />
               </svg>
 
-              <p className="text-text-dark/60 text-sm leading-relaxed mb-8 font-light">
+              <p className="text-text-dark/60 text-base leading-relaxed mb-8 font-light">
                 &ldquo;{t.text}&rdquo;
               </p>
 
               <div className="flex items-center justify-between border-t border-cream-dark/10 pt-5">
                 <div>
-                  <p className="font-semibold text-green-dark text-sm">{t.name}</p>
-                  <p className="text-text-dark/40 text-xs font-light">{t.role}</p>
+                  <p className="font-semibold text-green-dark text-base">{t.name}</p>
+                  <p className="text-text-dark/40 text-sm font-light">{t.role}</p>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] text-text-dark/30 uppercase tracking-wider font-light">Grade</span>
-                  <span className="bg-green-primary text-cream text-xs font-bold w-9 h-9 rounded-full flex items-center justify-center">
+                  <span className="bg-green-primary text-cream text-sm font-bold w-10 h-10 rounded-full flex items-center justify-center">
                     {t.result}
                   </span>
                 </div>

@@ -17,7 +17,7 @@ export default function Footer() {
                 <p className="text-cream/50 text-[9px] tracking-[0.18em] uppercase font-light leading-none mt-0.5">English Studio</p>
               </div>
             </div>
-            <p className="text-cream/30 text-sm leading-relaxed font-light">
+            <p className="text-cream/30 text-base leading-relaxed font-light">
               Singapore&apos;s premier English tuition studio. Expert coaching for O Levels, A Levels, and IELTS examinations.
             </p>
 
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-cream font-semibold mb-5 text-sm tracking-tight">Quick Links</h4>
+            <h4 className="font-serif text-cream font-semibold mb-5 text-base tracking-tight">Quick Links</h4>
             <ul className="space-y-3">
               {[
                 { href: "#about", label: "About Us" },
@@ -55,7 +55,7 @@ export default function Footer() {
 
           {/* Courses */}
           <div>
-            <h4 className="font-serif text-cream font-semibold mb-5 text-sm tracking-tight">Our Courses</h4>
+            <h4 className="font-serif text-cream font-semibold mb-5 text-base tracking-tight">Our Courses</h4>
             <ul className="space-y-3">
               {["O Level English (1184)", "A Level General Paper (8881)", "IELTS Academic", "IELTS General Training", "Private Tutoring"].map((course) => (
                 <li key={course}><span className="text-cream/30 text-sm font-light">{course}</span></li>
@@ -65,7 +65,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif text-cream font-semibold mb-5 text-sm tracking-tight">Contact Us</h4>
+            <h4 className="font-serif text-cream font-semibold mb-5 text-base tracking-tight">Contact Us</h4>
             <ul className="space-y-5">
               <li className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-sm bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">

@@ -37,7 +37,7 @@ export default function Hero() {
         <div className="animate-fade-in-up opacity-0">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="premium-divider" />
-            <p className="text-gold tracking-[0.35em] uppercase text-xs font-medium">
+            <p className="text-gold tracking-[0.35em] uppercase text-sm font-medium">
               Singapore&apos;s Premier English Studio
             </p>
             <div className="premium-divider" />
@@ -51,7 +51,7 @@ export default function Hero() {
           <span className="text-gold-gradient">English Excellence</span>
         </h1>
 
-        <p className="animate-fade-in-up opacity-0 delay-200 text-cream/50 text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+        <p className="animate-fade-in-up opacity-0 delay-200 text-cream/50 text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-light">
           Expert coaching for O Levels, A Levels & IELTS examinations.
           Personalised guidance to help you achieve distinction — every time.
         </p>

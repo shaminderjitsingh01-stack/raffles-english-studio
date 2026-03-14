@@ -58,14 +58,14 @@ export default function Packages() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal text-center max-w-3xl mx-auto mb-20">
-          <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
+          <p className="text-gold tracking-[0.3em] uppercase text-sm font-medium mb-4">
             Pricing
           </p>
           <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             Course Packages
           </h2>
           <div className="premium-divider mx-auto mb-6" />
-          <p className="text-text-dark/60 text-base leading-relaxed font-light">
+          <p className="text-text-dark/60 text-lg leading-relaxed font-light">
             Flexible packages for O Level, A Level, and IELTS preparation.
             All packages include access to our curated resource library.
           </p>
@@ -96,10 +96,10 @@ export default function Packages() {
               )}
 
               <div className="relative p-8 lg:p-10">
-                <h3 className={`font-serif text-xl font-semibold mb-1 tracking-tight ${pkg.highlight ? "text-cream" : "text-green-dark"}`}>
+                <h3 className={`font-serif text-2xl font-semibold mb-1 tracking-tight ${pkg.highlight ? "text-cream" : "text-green-dark"}`}>
                   {pkg.name}
                 </h3>
-                <p className={`text-xs mb-8 font-light ${pkg.highlight ? "text-cream/40" : "text-text-dark/40"}`}>
+                <p className={`text-sm mb-8 font-light ${pkg.highlight ? "text-cream/40" : "text-text-dark/40"}`}>
                   {pkg.sessions} &middot; {pkg.description}
                 </p>
 
@@ -114,7 +114,7 @@ export default function Packages() {
 
                 <ul className="space-y-4 mb-10">
                   {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm">
+                    <li key={feature} className="flex items-start gap-3 text-base">
                       <svg className={`w-4 h-4 mt-0.5 flex-shrink-0 ${pkg.highlight ? "text-gold" : "text-green-primary"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -129,7 +129,7 @@ export default function Packages() {
                   href="https://wa.me/6589677685"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block text-center font-medium py-4 rounded-sm transition-all duration-300 text-sm tracking-wide ${
+                  className={`block text-center font-medium py-4 rounded-sm transition-all duration-300 text-base tracking-wide ${
                     pkg.highlight
                       ? "bg-gold hover:bg-gold-light text-green-darker hover:shadow-[0_0_30px_rgba(196,169,98,0.2)]"
                       : "bg-green-primary hover:bg-green-light text-cream"
@@ -142,7 +142,7 @@ export default function Packages() {
           ))}
         </div>
 
-        <p className="reveal text-center text-text-dark/40 text-xs mt-12 font-light">
+        <p className="reveal text-center text-text-dark/40 text-sm mt-12 font-light">
           All prices in SGD. Trial lesson available at $50 (waived upon
           sign-up). Contact us for sibling & group discounts.
         </p>

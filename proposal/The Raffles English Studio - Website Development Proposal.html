@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Raffles English Studio - Website Development Proposal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #1a1a2e;
+      line-height: 1.7;
+      background: #fff;
+    }
+
+    .page {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 0;
+      page-break-after: always;
+    }
+
+    .page:last-child { page-break-after: avoid; }
+
+    /* Cover Page */
+    .cover {
+      background: #081f14;
+      color: #F0EBE0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 40px;
+    }
+
+    .cover-company {
+      font-size: 13px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #C4A962;
+      margin-bottom: 50px;
+      font-weight: 500;
+    }
+
+    .cover h1 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      color: #F0EBE0;
+    }
+
+    .cover .subtitle {
+      font-size: 18px;
+      color: #F0EBE0aa;
+      max-width: 550px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .cover .prepared-for {
+      margin-top: 50px;
+      font-size: 15px;
+      color: #C4A962;
+      font-weight: 500;
+    }
+
+    .cover .date {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #F0EBE080;
+      font-weight: 300;
+    }
+
+    .cover .label {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #F0EBE050;
+      letter-spacing: 0.1em;
+    }
+
+    /* Section styling */
+    .section {
+      padding: 60px 50px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-number {
+      font-size: 14px;
+      color: #1a5c38;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #0f3d25;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #C4A962;
+      margin-top: 12px;
+      margin-bottom: 24px;
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f3d25;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a5c38;
+      text-decoration: underline;
+      text-decoration-color: #C4A962;
+      text-underline-offset: 4px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .lead {
+      font-size: 16px;
+      color: #1a1a2e;
+      line-height: 1.8;
+    }
+
+    strong { color: #0f3d25; }
+
+    /* Objective callout */
+    .callout {
+      background: #f8faf9;
+      border-left: 4px solid #1a5c38;
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .callout p { margin-bottom: 0; }
+
+    .callout-label {
+      color: #1a5c38;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* Info callout (green border) */
+    .info-callout {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #1a5c38;
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .info-callout p { margin-bottom: 0; }
+
+    /* Comparison table */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 24px 0;
+    }
+
+    .comparison-col {
+      padding: 28px;
+    }
+
+    .comparison-col:first-child {
+      background: #fafafa;
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .comparison-col h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .comparison-col .sub {
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 400;
+      display: block;
+    }
+
+    .comparison-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .comparison-col ul li {
+      font-size: 13px;
+      color: #6b7280;
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .comparison-col:first-child ul li::before {
+      content: '\2022';
+      position: absolute;
+      left: 0;
+      color: #d1d5db;
+    }
+
+    .comparison-col:last-child ul li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: #1a5c38;
+      font-weight: 600;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    thead th {
+      background: #0f3d25;
+      color: #F0EBE0;
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    tbody td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #f3f4f6;
+      color: #374151;
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    tbody td:first-child {
+      font-weight: 600;
+      color: #0f3d25;
+    }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .checklist li {
+      padding: 14px 18px;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 14px;
+      color: #374151;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .checklist li:first-child {
+      border-top: 1px solid #f3f4f6;
+    }
+
+    .check {
+      color: #1a5c38;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 15px;
+    }
+
+    /* Pricing card */
+    .pricing-card {
+      background: #081f14;
+      color: #F0EBE0;
+      border-radius: 12px;
+      padding: 48px 40px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .pricing-label {
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #C4A962;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .pricing-amount {
+      font-size: 64px;
+      font-weight: 800;
+      color: #F0EBE0;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .pricing-period {
+      font-size: 16px;
+      color: #F0EBE080;
+      font-weight: 300;
+    }
+
+    .pricing-desc {
+      font-size: 14px;
+      color: #F0EBE060;
+      margin-top: 8px;
+      font-weight: 300;
+    }
+
+    /* Features list */
+    .features-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features-list li {
+      padding: 10px 0;
+      font-size: 14px;
+      color: #374151;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .features-list li .bullet {
+      color: #1a5c38;
+      font-weight: 700;
+    }
+
+    /* Signature section */
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 40px;
+    }
+
+    .sig-block h4 {
+      font-size: 14px;
+      color: #1a5c38;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .sig-block .company {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f3d25;
+      margin-bottom: 4px;
+    }
+
+    .sig-block .uen {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 24px;
+    }
+
+    .sig-line {
+      border-bottom: 1px solid #d1d5db;
+      padding-bottom: 4px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #9ca3af;
+      min-height: 30px;
+    }
+
+    /* Footer */
+    .proposal-footer {
+      text-align: center;
+      padding: 50px 40px;
+      color: #9ca3af;
+      font-size: 14px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .proposal-footer .thanks {
+      font-size: 20px;
+      color: #0f3d25;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .proposal-footer .sub {
+      font-size: 14px;
+      color: #9ca3af;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .proposal-footer .contact {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .proposal-footer .contact strong {
+      color: #0f3d25;
+    }
+
+    .proposal-footer .brand {
+      font-size: 13px;
+      color: #0f3d25;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    /* Print */
+    @media print {
+      body { background: white; }
+      .page { page-break-after: always; }
+      .cover { min-height: 100vh; }
+      .section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== COVER PAGE ==================== -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-company">S H A M I N D E R &nbsp; T E C H N O L O G I E S</div>
+    <h1>Website Design &<br/>Development</h1>
+    <p class="subtitle">
+      A Premium, High-Converting Website for Singapore's
+      Distinguished English Tuition Studio
+    </p>
+    <p class="prepared-for">Prepared for: The Raffles English Studio</p>
+    <p class="date">March 2026</p>
+    <p class="label">Cover Page</p>
+  </div>
+</div>
+
+<!-- ==================== 1. EXECUTIVE SUMMARY ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>1. Executive Summary</h2>
+
+    <p class="lead">
+      This proposal outlines the complete website design and development for
+      <strong>The Raffles English Studio</strong>, Singapore's premier English
+      tuition studio specialising in O Level, A Level, and IELTS examination
+      preparation.
+    </p>
+
+    <div class="callout">
+      <p>
+        <span class="callout-label">Objective:</span> Build a modern, premium
+        website that positions The Raffles English Studio as Singapore's leading
+        English tuition brand &mdash; with an engaging design, TikTok video
+        integration, self-managed blog via Sanity CMS, and seamless WhatsApp
+        enquiries.
+      </p>
+    </div>
+
+    <h3>Key Features</h3>
+
+    <div class="comparison">
+      <div class="comparison-col">
+        <h4>Without a Website</h4>
+        <ul>
+          <li>No online brand presence</li>
+          <li>Reliance on word-of-mouth only</li>
+          <li>No way to showcase courses or pricing</li>
+          <li>No social proof or testimonials</li>
+          <li>No lead generation or enquiry tools</li>
+          <li>No blog or content marketing</li>
+          <li>No TikTok or social media integration</li>
+          <li>No SEO visibility on Google</li>
+        </ul>
+      </div>
+      <div class="comparison-col">
+        <h4>New Website</h4>
+        <ul>
+          <li>Custom-built premium 2026 design</li>
+          <li>Next.js 16 &mdash; blazing-fast performance</li>
+          <li>Detailed course pages with pricing packages</li>
+          <li>Student testimonials with grade badges</li>
+          <li>Floating WhatsApp for instant enquiries</li>
+          <li>Sanity CMS blog &mdash; client self-manages</li>
+          <li>TikTok video carousel with lesson clips</li>
+          <li>Full SEO with OpenGraph &amp; structured data</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Deliverables</h3>
+
+    <ul class="checklist">
+      <li><span class="check">&check;</span> Complete website design and development with premium forest green, gold &amp; cream brand identity</li>
+      <li><span class="check">&check;</span> Video hero background on homepage &mdash; immersive first impression with professional footage</li>
+      <li><span class="check">&check;</span> Detailed course sections (O Level English, A Level GP, IELTS Preparation) with full descriptions</li>
+      <li><span class="check">&check;</span> Pricing packages page &mdash; Starter, Intensive, and Private tuition tiers with clear pricing</li>
+      <li><span class="check">&check;</span> TikTok video carousel &mdash; embedded English lesson clips with horizontal scroll navigation</li>
+      <li><span class="check">&check;</span> Student testimonials section with star ratings and grade achievement badges</li>
+      <li><span class="check">&check;</span> Sanity CMS blog integration &mdash; client can create, edit, and publish blog posts independently</li>
+      <li><span class="check">&check;</span> Blog listing page + individual article pages with featured images and categories</li>
+      <li><span class="check">&check;</span> Email newsletter signup section for student engagement and content marketing</li>
+      <li><span class="check">&check;</span> Mobile-responsive design with scroll-triggered animations throughout</li>
+      <li><span class="check">&check;</span> SEO optimisation (meta tags, OpenGraph, sitemap, structured data)</li>
+      <li><span class="check">&check;</span> Floating WhatsApp integration for instant enquiries (+65 8967 7685)</li>
+      <li><span class="check">&check;</span> About section with teaching philosophy, experience highlights, and trust indicators</li>
+      <li><span class="check">&check;</span> Contact section with studio information and social media links</li>
+      <li><span class="check">&check;</span> Changes and revisions (non-functional) before site goes live</li>
+      <li><span class="check">&check;</span> Source code ownership transferred on final payment</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== 2. TECHNOLOGY STACK ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>2. Technology Stack</h2>
+
+    <p>
+      We're using a cutting-edge, performance-focused technology stack that ensures
+      speed, security, and a premium user experience.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Technology</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frontend Framework</td>
+          <td>Next.js 16 (React 19)</td>
+          <td>Fast, SEO-friendly pages</td>
+        </tr>
+        <tr>
+          <td>Styling</td>
+          <td>Tailwind CSS 4</td>
+          <td>Modern, responsive design</td>
+        </tr>
+        <tr>
+          <td>Animations</td>
+          <td>CSS Animations + IntersectionObserver</td>
+          <td>Smooth scroll-triggered effects</td>
+        </tr>
+        <tr>
+          <td>Language</td>
+          <td>TypeScript</td>
+          <td>Type-safe, reliable code</td>
+        </tr>
+        <tr>
+          <td>CMS</td>
+          <td>Sanity CMS</td>
+          <td>Client-managed blog content</td>
+        </tr>
+        <tr>
+          <td>Deployment</td>
+          <td>Vercel</td>
+          <td>Edge-optimised global hosting</td>
+        </tr>
+        <tr>
+          <td>Typography</td>
+          <td>Playfair Display + Inter</td>
+          <td>Premium serif + clean sans-serif</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Why This Stack?</h3>
+
+    <div class="callout">
+      <p>
+        <span class="callout-label">Performance:</span> Next.js 16 with React 19 delivers
+        blazing-fast load times through automatic code splitting and edge-optimised
+        rendering. No WordPress bloat, no page builder overhead.
+      </p>
+    </div>
+
+    <ul class="checklist">
+      <li><span class="check">&check;</span> <strong>No WordPress vulnerabilities</strong> &mdash; Static and server-rendered pages can't be hacked</li>
+      <li><span class="check">&check;</span> <strong>Zero database exposure</strong> &mdash; No SQL injection risks</li>
+      <li><span class="check">&check;</span> <strong>Global CDN</strong> &mdash; Vercel serves from 100+ edge locations worldwide</li>
+      <li><span class="check">&check;</span> <strong>Instant deployments</strong> &mdash; Push code, site updates in seconds</li>
+      <li><span class="check">&check;</span> <strong>Self-managed blog</strong> &mdash; Sanity CMS lets the client publish articles without developer help</li>
+      <li><span class="check">&check;</span> <strong>Future-proof</strong> &mdash; React/Next.js is the industry standard for 2026</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== 3. WEBSITE STRUCTURE ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>3. Website Structure</h2>
+
+    <h3>Pages &amp; Sections Included</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Page / Section</th>
+          <th>Key Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Home</td>
+          <td>Video Hero, About, Courses, Packages, TikTok Carousel, Testimonials, Blog Preview, Newsletter, Contact, Footer</td>
+        </tr>
+        <tr>
+          <td>Hero Section</td>
+          <td>Video background with green overlay, tagline, "Book a Free Trial" CTA, stats bar (500+ students, 95% distinction, 10+ years)</td>
+        </tr>
+        <tr>
+          <td>About Section</td>
+          <td>Teaching philosophy, 4 feature cards (Expert Coaching, Proven Results, Small Classes, Exam Strategy)</td>
+        </tr>
+        <tr>
+          <td>Courses Section</td>
+          <td>O Level English, A Level General Paper, IELTS Preparation &mdash; with descriptions and key focus areas</td>
+        </tr>
+        <tr>
+          <td>Packages Section</td>
+          <td>3 pricing tiers: Starter ($280/mo), Intensive ($480/mo), Private ($120/session)</td>
+        </tr>
+        <tr>
+          <td>TikTok Carousel</td>
+          <td>8 embedded TikTok English lesson videos with horizontal scroll and navigation arrows</td>
+        </tr>
+        <tr>
+          <td>Testimonials</td>
+          <td>6 student testimonials with star ratings, grade achievement badges, and course labels</td>
+        </tr>
+        <tr>
+          <td>Blog Preview</td>
+          <td>3 latest blog posts with featured images, categories, excerpts, and "View All" link</td>
+        </tr>
+        <tr>
+          <td>Newsletter</td>
+          <td>Email signup section for English tips, exam strategies, and study content</td>
+        </tr>
+        <tr>
+          <td>Blog Listing (/blog)</td>
+          <td>All blog posts in a grid layout with featured images, categories, and dates</td>
+        </tr>
+        <tr>
+          <td>Blog Article (/blog/[slug])</td>
+          <td>Individual article pages with hero image, body content, categories, and "Book a Trial" CTA</td>
+        </tr>
+        <tr>
+          <td>Footer</td>
+          <td>Contact info, quick links, social media icons, WhatsApp number</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Key Features</h3>
+
+    <h4>TikTok Video Carousel</h4>
+    <p>
+      An embedded TikTok video carousel showcasing English lesson clips from a curated
+      teaching channel. Videos are embedded using the TikTok Player API v1 for a clean,
+      caption-free viewing experience with no related video distractions.
+    </p>
+    <ul class="checklist">
+      <li><span class="check">&check;</span> 8 curated English lesson TikTok videos</li>
+      <li><span class="check">&check;</span> Horizontal scroll with left/right navigation arrows</li>
+      <li><span class="check">&check;</span> Clean player embed &mdash; no captions, no related videos, no scrollbars</li>
+      <li><span class="check">&check;</span> "Follow for more lessons" link to TikTok channel</li>
+    </ul>
+
+    <h4>Sanity CMS Blog</h4>
+    <p>
+      A fully integrated blog system powered by Sanity CMS, allowing the client to
+      independently create, edit, and publish blog posts with rich content, featured
+      images, and categories &mdash; without any developer involvement.
+    </p>
+    <ul class="checklist">
+      <li><span class="check">&check;</span> Client self-manages blog content via Sanity Studio dashboard</li>
+      <li><span class="check">&check;</span> Blog listing page with grid layout and featured images</li>
+      <li><span class="check">&check;</span> Individual article pages with full formatting</li>
+      <li><span class="check">&check;</span> Categories and tags for content organisation</li>
+      <li><span class="check">&check;</span> Placeholder content pre-loaded for 6 articles</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== 4. LEAD GENERATION ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>4. Lead Generation System</h2>
+
+    <p>
+      Multiple conversion points are built throughout the website to capture
+      enquiries and convert visitors into trial students at every stage of the
+      browsing journey.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Touchpoint</th>
+          <th>Location</th>
+          <th>How It Works</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>WhatsApp Button</td>
+          <td>Floating (all pages)</td>
+          <td>Pre-filled message for instant trial booking enquiries</td>
+        </tr>
+        <tr>
+          <td>"Book a Free Trial" CTA</td>
+          <td>Hero, Packages, Blog articles</td>
+          <td>Direct WhatsApp link with contextual message</td>
+        </tr>
+        <tr>
+          <td>Newsletter Signup</td>
+          <td>Homepage section</td>
+          <td>Email capture for English tips and exam strategies</td>
+        </tr>
+        <tr>
+          <td>TikTok Channel</td>
+          <td>Video carousel section</td>
+          <td>"Follow for more lessons" drives social following</td>
+        </tr>
+        <tr>
+          <td>Blog Content</td>
+          <td>Blog pages</td>
+          <td>SEO-driven content attracts organic search traffic</td>
+        </tr>
+        <tr>
+          <td>Course Package CTAs</td>
+          <td>Packages section</td>
+          <td>"Get Started" buttons on each pricing tier</td>
+        </tr>
+        <tr>
+          <td>Blog Article CTA</td>
+          <td>Bottom of every blog post</td>
+          <td>"Ready to Excel?" section with trial booking link</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-callout">
+      <p>
+        <span class="callout-label">Conversion Flow:</span> Visitor discovers the site via
+        Google/TikTok/referral &rarr; browses courses and testimonials &rarr; reads blog
+        content &rarr; clicks "Book a Free Trial" or WhatsApp button &rarr; pre-filled
+        WhatsApp message opens &rarr; direct conversation with the studio.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 5. DESIGN & UX ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>5. Design &amp; User Experience</h2>
+
+    <p>
+      Every design choice is made to convey academic excellence, classical prestige,
+      and trust &mdash; positioning The Raffles English Studio as a premium brand
+      worthy of Singapore's discerning parents and students.
+    </p>
+
+    <h3>Brand Design System</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Detail</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primary Colour</td>
+          <td>#1A5C38 (Forest Green)</td>
+          <td>Trust, academic prestige, excellence</td>
+        </tr>
+        <tr>
+          <td>Dark Colour</td>
+          <td>#0F3D25 (Dark Green)</td>
+          <td>Authority, depth, premium feel</td>
+        </tr>
+        <tr>
+          <td>Accent Colour</td>
+          <td>#C4A962 (Gold)</td>
+          <td>Distinction, achievement, premium highlights</td>
+        </tr>
+        <tr>
+          <td>Background</td>
+          <td>#F0EBE0 (Cream)</td>
+          <td>Warm, classical elegance</td>
+        </tr>
+        <tr>
+          <td>Serif Font</td>
+          <td>Playfair Display</td>
+          <td>Headings &mdash; refined, academic character</td>
+        </tr>
+        <tr>
+          <td>Sans Font</td>
+          <td>Inter</td>
+          <td>Body text &mdash; modern, clean readability</td>
+        </tr>
+        <tr>
+          <td>Animations</td>
+          <td>CSS + IntersectionObserver</td>
+          <td>Scroll-triggered reveals, premium feel</td>
+        </tr>
+        <tr>
+          <td>Logo</td>
+          <td>Laurel wreath + column emblem</td>
+          <td>Classical Greek aesthetic, brand identity</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>UX Features</h3>
+
+    <ul class="checklist">
+      <li><span class="check">&check;</span> <strong>Video hero background</strong> &mdash; Premium first impression with library/books footage and semi-transparent green overlay</li>
+      <li><span class="check">&check;</span> <strong>Scroll-triggered animations</strong> &mdash; Elements fade and slide into view as user scrolls down</li>
+      <li><span class="check">&check;</span> <strong>Interactive pricing cards</strong> &mdash; Hover effects with gold accent transitions on package tiers</li>
+      <li><span class="check">&check;</span> <strong>Responsive navigation</strong> &mdash; Desktop horizontal menu + mobile hamburger with smooth toggle</li>
+      <li><span class="check">&check;</span> <strong>Glassmorphism effects</strong> &mdash; Semi-transparent glass cards on hero stats bar</li>
+      <li><span class="check">&check;</span> <strong>Gold gradient text</strong> &mdash; Shimmer effect on hero heading for premium feel</li>
+      <li><span class="check">&check;</span> <strong>Decorative elements</strong> &mdash; Corner accents, decorative rings, and premium dividers throughout</li>
+      <li><span class="check">&check;</span> <strong>Floating WhatsApp button</strong> &mdash; Always accessible with bounce animation</li>
+      <li><span class="check">&check;</span> <strong>Noise texture overlay</strong> &mdash; Subtle grain effect for depth and sophistication</li>
+      <li><span class="check">&check;</span> <strong>Custom scroll indicator</strong> &mdash; Animated mouse scroll icon on hero section</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== 6. PRICING ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>6. Pricing</h2>
+
+    <div class="pricing-card">
+      <div class="pricing-label">W E B S I T E &nbsp; D E V E L O P M E N T</div>
+      <div class="pricing-amount">S$1,500</div>
+      <div class="pricing-period">one-time</div>
+      <div class="pricing-desc">Complete website design, development, and deployment</div>
+    </div>
+
+    <h3>What's Included in Development</h3>
+
+    <ul class="checklist">
+      <li><span class="check">&check;</span> Complete website design and development with premium forest green, gold &amp; cream brand identity</li>
+      <li><span class="check">&check;</span> Video hero background on homepage with professional footage</li>
+      <li><span class="check">&check;</span> Detailed course sections (O Level English, A Level GP, IELTS Preparation)</li>
+      <li><span class="check">&check;</span> Pricing packages page &mdash; 3 tiers (Starter, Intensive, Private) with clear pricing</li>
+      <li><span class="check">&check;</span> TikTok video carousel with 8 embedded English lesson clips</li>
+      <li><span class="check">&check;</span> Student testimonials section with grade badges and star ratings</li>
+      <li><span class="check">&check;</span> Sanity CMS blog integration &mdash; client can self-manage blog content</li>
+      <li><span class="check">&check;</span> Blog listing page + individual article pages with featured images</li>
+      <li><span class="check">&check;</span> Email newsletter signup section</li>
+      <li><span class="check">&check;</span> Mobile-responsive design with scroll-triggered animations</li>
+      <li><span class="check">&check;</span> SEO optimisation (meta tags, OpenGraph, sitemap, structured data)</li>
+      <li><span class="check">&check;</span> Floating WhatsApp integration for instant enquiries</li>
+      <li><span class="check">&check;</span> About section with teaching philosophy and trust indicators</li>
+      <li><span class="check">&check;</span> Contact section with studio information and social media links</li>
+      <li><span class="check">&check;</span> Changes and revisions (non-functional) before site goes live</li>
+      <li><span class="check">&check;</span> Source code ownership transferred on final payment</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== 7. HOSTING OPTIONS ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>7. Hosting Options</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Option</th>
+          <th>Monthly Cost</th>
+          <th>Includes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Option A: Shaminder Technologies Managed Hosting (Recommended)</td>
+          <td>S$100/month</td>
+          <td>
+            Vercel hosting management<br/>
+            <strong>Automatic deployments</strong> &mdash; push updates instantly<br/>
+            Content revisions &amp; bug fixes<br/>
+            Security monitoring<br/>
+            Monthly backups<br/>
+            Priority WhatsApp support<br/>
+            Small edits (up to 4/month)
+          </td>
+        </tr>
+        <tr>
+          <td>Option B: Self-Managed Hosting</td>
+          <td>S$0/month</td>
+          <td>
+            Source code handed over<br/>
+            Client manages own Vercel account<br/>
+            Client handles deployments<br/>
+            No ongoing support included<br/>
+            Support available at hourly rate ($80/hr)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-callout">
+      <p>
+        <span class="callout-label">Recommendation:</span> Option A ensures your website
+        stays updated, secure, and running smoothly without you needing to manage any
+        technical details. Small text changes, image swaps, and content updates are all
+        included &mdash; just WhatsApp us the changes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 8. PAYMENT TERMS ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>8. Payment Terms</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Milestone</th>
+          <th>Amount</th>
+          <th>When</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Deposit</td>
+          <td>S$750 (50%)</td>
+          <td>Upon signing agreement</td>
+        </tr>
+        <tr>
+          <td>Final Payment</td>
+          <td>S$750 (50%)</td>
+          <td>Upon project completion</td>
+        </tr>
+        <tr>
+          <td>Monthly Hosting (if applicable)</td>
+          <td>S$100</td>
+          <td>Starting from launch</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-callout">
+      <p>
+        <span class="callout-label">Payment Methods:</span> PayNow, bank transfer, or cheque.
+        Invoices are issued at each milestone and are due within 7 days.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 9. PROJECT TIMELINE ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>9. Project Timeline</h2>
+
+    <p>
+      The estimated project timeline from kickoff to launch is <strong>3 weeks</strong>,
+      subject to content readiness and feedback turnaround.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Description</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Phase 1</td>
+          <td>Design approval &amp; content collection</td>
+          <td>Week 1</td>
+        </tr>
+        <tr>
+          <td>Phase 2</td>
+          <td>Development &amp; page build</td>
+          <td>Week 1&ndash;2</td>
+        </tr>
+        <tr>
+          <td>Phase 3</td>
+          <td>Review, revisions &amp; testing</td>
+          <td>Week 3</td>
+        </tr>
+        <tr>
+          <td>Phase 4</td>
+          <td>Launch &amp; handover</td>
+          <td>Week 3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 12px; color: #9ca3af; margin-top: 16px;">
+      *Timeline may vary based on content readiness and feedback turnaround.
+    </p>
+  </div>
+</div>
+
+<!-- ==================== 10. TERMS & CONDITIONS ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>10. Terms &amp; Conditions</h2>
+
+    <h4>1. Content Responsibility</h4>
+    <p>
+      Client is responsible for providing all text content, logos, and images. Stock
+      images and video footage can be sourced at additional cost if needed.
+    </p>
+
+    <h4>2. Revisions</h4>
+    <p>
+      Revisions prior to site being live are free of cost as long as they are not
+      functional changes (i.e., changes that alter the scope of work).
+    </p>
+
+    <h4>3. Payment Terms</h4>
+    <p>
+      Invoices are due within 7 days. Late payments may result in project delays.
+    </p>
+
+    <h4>4. Cancellation</h4>
+    <p>
+      Deposit is non-refundable. Work completed up to cancellation date will be billed.
+    </p>
+
+    <h4>5. Hosting Termination</h4>
+    <p>
+      Monthly hosting can be cancelled with 30 days notice. All credentials and code
+      will be transferred to client.
+    </p>
+
+    <h4>6. Ownership</h4>
+    <p>
+      Upon receipt of final payment, client receives full ownership of all website
+      source code and deployment access.
+    </p>
+
+    <h4>7. Third-Party Services</h4>
+    <p>
+      Costs for third-party services (domain registration, email hosting, Sanity CMS
+      plan, stock media, etc.) are not included in this proposal and are the client's
+      responsibility.
+    </p>
+
+    <h4>8. Sanity CMS</h4>
+    <p>
+      The blog is powered by Sanity CMS. The free tier supports up to 3 users and
+      500K API requests/month. If additional capacity is needed, the client is
+      responsible for upgrading to a paid Sanity plan.
+    </p>
+  </div>
+</div>
+
+<!-- ==================== 11. AGREEMENT ==================== -->
+<div class="page">
+  <div class="section">
+    <h2>11. Agreement</h2>
+
+    <p>
+      By signing below, both parties agree to the scope of work, pricing, timelines,
+      and terms outlined in this proposal. This proposal becomes a binding agreement
+      upon signature.
+    </p>
+
+    <div class="signature-grid">
+      <div class="sig-block">
+        <h4>Service Provider</h4>
+        <p class="company">Shaminder Technologies</p>
+        <p class="uen">UEN: 53517126J</p>
+        <div class="sig-line">Name: _________________________</div>
+        <div class="sig-line">Signature: _____________________</div>
+        <div class="sig-line">Date: _________________________</div>
+      </div>
+      <div class="sig-block">
+        <h4>Client</h4>
+        <p class="company">The Raffles English Studio</p>
+        <p class="uen">&nbsp;</p>
+        <div class="sig-line">Name: _________________________</div>
+        <div class="sig-line">Signature: _____________________</div>
+        <div class="sig-line">Date: _________________________</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proposal-footer">
+    <p class="thanks">Thank you for considering this proposal.</p>
+    <p class="sub">We look forward to working with you!</p>
+    <p class="contact">Questions? Contact us at <strong>shaminder.sg</strong></p>
+    <p class="brand">Shaminder Technologies | UEN: 53517126J</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -51,14 +51,14 @@ export default function Courses() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal text-center max-w-3xl mx-auto mb-20">
-          <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
+          <p className="text-gold tracking-[0.3em] uppercase text-sm font-medium mb-4">
             Our Programmes
           </p>
           <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             Courses We Offer
           </h2>
           <div className="premium-divider mx-auto mb-6" />
-          <p className="text-text-dark/50 text-base leading-relaxed font-light">
+          <p className="text-text-dark/50 text-lg leading-relaxed font-light">
             Structured programmes designed to take you from where you are to
             where you want to be.
           </p>
@@ -78,10 +78,10 @@ export default function Courses() {
                 {/* Level badge */}
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <h3 className="font-serif text-green-dark text-2xl font-bold tracking-tight">
+                    <h3 className="font-serif text-green-dark text-3xl font-bold tracking-tight">
                       {course.level}
                     </h3>
-                    <p className="text-text-dark/40 text-sm mt-1 font-light">{course.subtitle}</p>
+                    <p className="text-text-dark/40 text-base mt-1 font-light">{course.subtitle}</p>
                   </div>
                   <div className="w-10 h-10 rounded-sm bg-green-primary/5 group-hover:bg-gold/10 flex items-center justify-center transition-colors duration-300">
                     <svg className="w-5 h-5 text-green-primary group-hover:text-gold transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,14 +90,14 @@ export default function Courses() {
                   </div>
                 </div>
 
-                <p className="text-text-dark/50 text-sm leading-relaxed mb-8 font-light">
+                <p className="text-text-dark/50 text-base leading-relaxed mb-8 font-light">
                   {course.description}
                 </p>
 
                 {/* Topics */}
                 <ul className="space-y-3 mb-8">
                   {course.topics.map((topic) => (
-                    <li key={topic} className="flex items-center gap-3 text-text-dark/60 text-sm">
+                    <li key={topic} className="flex items-center gap-3 text-text-dark/60 text-base">
                       <div className="w-1 h-1 rounded-full bg-gold flex-shrink-0" />
                       {topic}
                     </li>
@@ -108,7 +108,7 @@ export default function Courses() {
                   href="https://wa.me/6589677685"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center bg-green-primary hover:bg-gold text-cream hover:text-green-darker font-medium py-3.5 rounded-sm transition-all duration-300 text-sm tracking-wide"
+                  className="block text-center bg-green-primary hover:bg-gold text-cream hover:text-green-darker font-medium py-3.5 rounded-sm transition-all duration-300 text-base tracking-wide"
                 >
                   Enquire Now
                 </a>

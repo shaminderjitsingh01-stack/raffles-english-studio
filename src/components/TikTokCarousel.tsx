@@ -33,14 +33,14 @@ export default function TikTokCarousel() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div className="reveal">
-            <p className="text-gold tracking-[0.3em] uppercase text-xs font-medium mb-4">
+            <p className="text-gold tracking-[0.3em] uppercase text-sm font-medium mb-4">
               Learn on TikTok
             </p>
             <h2 className="font-serif text-green-primary text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
               English Tips & Lessons
             </h2>
             <div className="premium-divider mt-4 mb-4" />
-            <p className="text-text-dark/50 max-w-xl font-light text-sm">
+            <p className="text-text-dark/50 max-w-xl font-light text-base">
               Quick English tips, exam hacks, and study motivation — bite-sized
               lessons you can watch anywhere.
             </p>
@@ -90,7 +90,7 @@ export default function TikTokCarousel() {
                   style={{ overflow: "hidden" }}
                 />
               </div>
-              <p className="text-text-dark/50 text-xs mt-3 font-light tracking-wide">
+              <p className="text-text-dark/50 text-sm mt-3 font-light tracking-wide">
                 {video.title}
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function TikTokCarousel() {
             href="https://www.tiktok.com/@englishteacherclaire"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-green-primary/60 hover:text-gold border border-green-primary/15 hover:border-gold/30 px-6 py-3 rounded-sm transition-all duration-300 text-sm font-light tracking-wide"
+            className="inline-flex items-center gap-3 text-green-primary/60 hover:text-gold border border-green-primary/15 hover:border-gold/30 px-6 py-3 rounded-sm transition-all duration-300 text-base font-light tracking-wide"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.74a8.18 8.18 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.17z" />
