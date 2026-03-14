@@ -43,7 +43,7 @@ export default function Navbar({ forceSolid = false }: { forceSolid?: boolean })
               height={52}
               className={`transition-all duration-300 ${solid ? "w-10 h-10" : "w-[52px] h-[52px]"}`}
             />
-            <div className="hidden sm:block">
+            <div>
               <p className="text-cream/40 text-[9px] tracking-[0.3em] uppercase font-light leading-none">
                 The
               </p>
