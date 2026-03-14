@@ -32,7 +32,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 noise-overlay" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center pt-24">
         {/* Tagline */}
         <div className="animate-fade-in-up opacity-0">
           <div className="flex items-center justify-center gap-4 mb-6">
