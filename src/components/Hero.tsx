@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -35,29 +33,8 @@ export default function Hero() {
       <div className="absolute inset-0 noise-overlay" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-        {/* Logo — large & prominent with text beside it */}
-        <div className="animate-fade-in-up opacity-0 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-10">
-          <Image
-            src="/logo.png"
-            alt="The Raffles English Studio"
-            width={200}
-            height={200}
-            className="drop-shadow-2xl w-[160px] h-[160px] sm:w-[200px] sm:h-[200px]"
-            priority
-          />
-          <div className="text-left hidden sm:block">
-            <p className="text-cream/50 text-sm tracking-[0.35em] uppercase font-light">The</p>
-            <h2 className="font-serif text-cream text-5xl lg:text-6xl font-bold leading-[1] tracking-tight">
-              Raffles
-            </h2>
-            <p className="text-cream/60 text-base tracking-[0.2em] uppercase font-light mt-1">
-              English Studio
-            </p>
-          </div>
-        </div>
-
         {/* Tagline */}
-        <div className="animate-fade-in-up opacity-0 delay-100">
+        <div className="animate-fade-in-up opacity-0">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="premium-divider" />
             <p className="text-gold tracking-[0.35em] uppercase text-xs font-medium">
@@ -68,19 +45,19 @@ export default function Hero() {
         </div>
 
         {/* Main heading */}
-        <h1 className="animate-fade-in-up opacity-0 delay-200 font-serif text-cream text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8 tracking-tight">
+        <h1 className="animate-fade-in-up opacity-0 delay-100 font-serif text-cream text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8 tracking-tight">
           Master the Art of
           <br />
           <span className="text-gold-gradient">English Excellence</span>
         </h1>
 
-        <p className="animate-fade-in-up opacity-0 delay-300 text-cream/50 text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+        <p className="animate-fade-in-up opacity-0 delay-200 text-cream/50 text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-light">
           Expert coaching for O Levels, A Levels & IELTS examinations.
           Personalised guidance to help you achieve distinction — every time.
         </p>
 
         {/* CTAs */}
-        <div className="animate-fade-in-up opacity-0 delay-400 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="animate-fade-in-up opacity-0 delay-300 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="https://wa.me/6589677685"
             target="_blank"
@@ -101,7 +78,7 @@ export default function Hero() {
         </div>
 
         {/* Stats bar */}
-        <div className="animate-fade-in-up opacity-0 delay-500 mt-20 flex items-center justify-center">
+        <div className="animate-fade-in-up opacity-0 delay-400 mt-20 flex items-center justify-center">
           <div className="glass-card-dark rounded-sm px-2 py-4 sm:px-8 inline-flex items-center divide-x divide-cream/10">
             {[
               { value: "500+", label: "Students Coached" },
